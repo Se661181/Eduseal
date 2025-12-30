@@ -1,0 +1,342 @@
+{
+  "chains": [
+    {
+      "network": "devnet",
+      "chainId": "20258",
+      "rpc_url": "https://dev-rpc.codenut.dev",
+      "contracts": [
+        {
+          "address": "0xd0732647ef58530b1976b453b74400e0728c0e6a",
+          "txHash": "0x7de9684f04e7bd7804754ec0fc7021219f6408dce9f9c69911cd6bac2b9db5c8",
+          "contractName": "EduSealRegistry",
+          "abi": [
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "_reclaimVerifier",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "nonpayable",
+              "type": "constructor"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "credentialIndex",
+                  "type": "uint256"
+                }
+              ],
+              "name": "deactivateCredential",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "credentialIndex",
+                  "type": "uint256"
+                }
+              ],
+              "name": "getCredential",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "degreeName",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "issuer",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "timestamp",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "active",
+                      "type": "bool"
+                    }
+                  ],
+                  "internalType": "struct EduSealRegistry.Credential",
+                  "name": "",
+                  "type": "tuple"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                }
+              ],
+              "name": "getUserCredentialCount",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                }
+              ],
+              "name": "getUserCredentials",
+              "outputs": [
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "degreeName",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "issuer",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "timestamp",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "bool",
+                      "name": "active",
+                      "type": "bool"
+                    }
+                  ],
+                  "internalType": "struct EduSealRegistry.Credential[]",
+                  "name": "",
+                  "type": "tuple[]"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "credentialIndex",
+                  "type": "uint256"
+                }
+              ],
+              "name": "isCredentialActive",
+              "outputs": [
+                {
+                  "internalType": "bool",
+                  "name": "",
+                  "type": "bool"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "reclaimVerifier",
+              "outputs": [
+                {
+                  "internalType": "address",
+                  "name": "",
+                  "type": "address"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [],
+              "name": "totalCredentialsMinted",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "internalType": "string",
+                          "name": "provider",
+                          "type": "string"
+                        },
+                        {
+                          "internalType": "string",
+                          "name": "parameters",
+                          "type": "string"
+                        },
+                        {
+                          "internalType": "string",
+                          "name": "context",
+                          "type": "string"
+                        }
+                      ],
+                      "internalType": "struct ClaimInfo",
+                      "name": "claimInfo",
+                      "type": "tuple"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "bytes32",
+                          "name": "identifier",
+                          "type": "bytes32"
+                        },
+                        {
+                          "internalType": "address",
+                          "name": "owner",
+                          "type": "address"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "timestampS",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "uint32",
+                          "name": "epoch",
+                          "type": "uint32"
+                        }
+                      ],
+                      "internalType": "struct SignedClaim",
+                      "name": "signedClaim",
+                      "type": "tuple"
+                    }
+                  ],
+                  "internalType": "struct Proof",
+                  "name": "proof",
+                  "type": "tuple"
+                }
+              ],
+              "name": "verifyAndMint",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "uint256",
+                  "name": "credentialIndex",
+                  "type": "uint256"
+                }
+              ],
+              "name": "CredentialDeactivated",
+              "type": "event"
+            },
+            {
+              "anonymous": false,
+              "inputs": [
+                {
+                  "indexed": true,
+                  "internalType": "address",
+                  "name": "user",
+                  "type": "address"
+                },
+                {
+                  "indexed": true,
+                  "internalType": "uint256",
+                  "name": "credentialIndex",
+                  "type": "uint256"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "string",
+                  "name": "degreeName",
+                  "type": "string"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "string",
+                  "name": "issuer",
+                  "type": "string"
+                },
+                {
+                  "indexed": false,
+                  "internalType": "uint256",
+                  "name": "timestamp",
+                  "type": "uint256"
+                }
+              ],
+              "name": "CredentialMinted",
+              "type": "event"
+            },
+            {
+              "inputs": [],
+              "name": "CredentialAlreadyInactive",
+              "type": "error"
+            },
+            {
+              "inputs": [],
+              "name": "CredentialNotFound",
+              "type": "error"
+            },
+            {
+              "inputs": [],
+              "name": "InvalidVerifierAddress",
+              "type": "error"
+            },
+            {
+              "inputs": [],
+              "name": "ProofVerificationFailed",
+              "type": "error"
+            }
+          ],
+          "bytecode": "",
+          "streamed": true
+        }
+      ],
+      "security_score": 71,
+      "security_scan_timestamp": 1764234746
+    }
+  ]
+}

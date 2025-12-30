@@ -1,0 +1,58 @@
+{
+  "name": "EduSeal: Sovereign Identity",
+  "short_name": "EduSeal",
+  "description": "Verify academic credentials instantly using TLS Proofs and Zero-Knowledge privacy. The black card of academia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020202",
+  "theme_color": "#0A0A0A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Shadow Mint",
+      "short_name": "Mint",
+      "description": "Mint a new credential",
+      "url": "/?action=mint",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your credentials",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

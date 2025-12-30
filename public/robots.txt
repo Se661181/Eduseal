@@ -1,0 +1,18 @@
+# EduSeal - Robots.txt
+# Allow all crawlers to index the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://preview-e475308b-493c-4d22-aa1e-1611ef9a6a32.codenut.dev/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow API endpoints (if any)
+Disallow: /api/
+
+# Allow specific paths
+Allow: /
+Allow: /dashboard

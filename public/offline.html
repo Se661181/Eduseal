@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - EduSeal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: linear-gradient(135deg, #020202 0%, #0A0A0A 100%);
+      color: #FFFFFF;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 500px;
+    }
+    
+    .icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 30px;
+      background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+    }
+    
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    p {
+      font-size: 16px;
+      color: #999999;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    
+    .button {
+      display: inline-block;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+      color: #0A0A0A;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+    }
+    
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+    }
+    
+    .status {
+      margin-top: 40px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    
+    .status-text {
+      font-size: 14px;
+      color: #D4AF37;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    <h1>You're Offline</h1>
+    <p>
+      EduSeal requires an internet connection to verify credentials on-chain. 
+      Please check your network and try again.
+    </p>
+    <a href="/" class="button" onclick="window.location.reload(); return false;">
+      Retry Connection
+    </a>
+    <div class="status">
+      <p class="status-text">⚡ Cached content available when online</p>
+    </div>
+  </div>
+  
+  <script>
+    // Auto-reload when connection is restored
+    window.addEventListener('online', () => {
+      window.location.reload();
+    });
+    
+    // Check connection status
+    if (navigator.onLine) {
+      window.location.href = '/';
+    }
+  </script>
+</body>
+</html>

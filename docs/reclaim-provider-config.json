@@ -1,0 +1,71 @@
+{
+  "providers": [
+    {
+      "name": "Canvas LMS - Student Profile",
+      "description": "Extracts student profile information from Canvas LMS API",
+      "targetUrl": "*/api/v1/users/self/profile",
+      "method": "GET",
+      "responseType": "json",
+      "responseMatches": [
+        {
+          "type": "regex",
+          "value": "\"name\"\\s*:\\s*\"([^\"]+)\"",
+          "invert": false
+        },
+        {
+          "type": "regex",
+          "value": "\"primary_email\"\\s*:\\s*\"([^\"]+)\"",
+          "invert": false
+        },
+        {
+          "type": "regex",
+          "value": "\"id\"\\s*:\\s*(\\d+)",
+          "invert": false
+        }
+      ],
+      "parameters": {
+        "name": {
+          "regex": "\"name\"\\s*:\\s*\"([^\"]+)\"",
+          "group": 1,
+          "description": "Student's full name from Canvas profile"
+        },
+        "email": {
+          "regex": "\"primary_email\"\\s*:\\s*\"([^\"]+)\"",
+          "group": 1,
+          "description": "Student's primary email address"
+        },
+        "studentId": {
+          "regex": "\"id\"\\s*:\\s*(\\d+)",
+          "group": 1,
+          "description": "Canvas user ID"
+        }
+      }
+    },
+    {
+      "name": "Generic Gradebook - Course Grades",
+      "description": "Extracts course names and grades from HTML gradebook tables",
+      "targetUrl": "*gradebook*",
+      "method": "GET",
+      "responseType": "html",
+      "responseMatches": [
+        {
+          "type": "regex",
+          "value": "<td[^>]*class=\"course\"[^>]*>\\s*([^<]+)\\s*</td>(?:(?!</tr>).)*<span[^>]*class=\"grade\"[^>]*>\\s*([^<]+)\\s*</span>",
+          "invert": false
+        }
+      ],
+      "parameters": {
+        "courseName": {
+          "regex": "<td[^>]*class=\"course\"[^>]*>\\s*([^<]+)\\s*</td>(?:(?!</tr>).)*<span[^>]*class=\"grade\"[^>]*>\\s*([^<]+)\\s*</span>",
+          "group": 1,
+          "description": "Course name from gradebook table"
+        },
+        "grade": {
+          "regex": "<td[^>]*class=\"course\"[^>]*>\\s*([^<]+)\\s*</td>(?:(?!</tr>).)*<span[^>]*class=\"grade\"[^>]*>\\s*([^<]+)\\s*</span>",
+          "group": 2,
+          "description": "Letter grade (A, B, C, etc.)"
+        }
+      }
+    }
+  ]
+}

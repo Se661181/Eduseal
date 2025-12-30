@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/agent/verify-user",
+      "destination": "/api/verify-user"
+    }
+  ]
+}
