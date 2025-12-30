@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build Outputs
+dist/
+build/
+out/
+cache/
+broadcast/
+
+# Environment Variables (CRITICAL)
+.env
+.env.local
+.env.*
+! .env.example
+! .env.local.example
+
+# Testing
+test-results/
+.playwright-artifacts*/
+coverage/
+
+# System
+.DS_Store
+Thumbs.db
